@@ -9,6 +9,7 @@ setup(
     install_requires=[
         "networkx",
         "matplotlib",
+        "heapq",
     ],
     python_requires='>=3.7',
 )
