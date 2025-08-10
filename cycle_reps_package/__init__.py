@@ -2,5 +2,3 @@ from cycle_reps_package.graphgen import generate_bipartite_graph, assign_weights
 from cycle_reps_package.spanningtree import weight_biased_spanning_tree, draw_weight_biased_spanning_tree
 from cycle_reps_package.cycles import find_cycles_from_non_tree_edges, decompose_manual_cycle_exact
 from cycle_reps_package.filtering import draw_filtered_subgraph, analyze_and_draw_superlevel_cycles
-from .graphgen import generate_bipartite_graph, assign_weights, format_label, draw_bipartite_graph
-
