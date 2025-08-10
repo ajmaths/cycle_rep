@@ -1,6 +1,6 @@
 import unittest
 import networkx as nx
-from mygraph.graph_utils import generate_bipartite_graph, assign_weights, weight_biased_spanning_tree, find_cycles_from_non_tree_edges
+from cycle_reps_package.graph_utils import generate_bipartite_graph, assign_weights, weight_biased_spanning_tree, find_cycles_from_non_tree_edges
 
 class TestBasicFunctions(unittest.TestCase):
     def setUp(self):
