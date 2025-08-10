@@ -75,12 +75,12 @@ if indices:
 
 - `Cycle_reps.ipynb` — Contains all functions for graph generation, weight assignment, spanning tree computation, and visualization.
 - cycle_reps_package/
-├── __init__.py
-├── graph_utils.py      # Core functions for graph generation, weights, spanning tree, cycle reps, filtering, and drawing
-├── filters.py          # Filtering-related functions (optional separation)
-├── cycles.py           # Cycle analysis and drawing utilities (optional separation)
-└── tests/
-    └── test_basic.py   # Unit tests for main functionalities
+├-- __init__.py
+├-- graph_utils.py      # Core functions for graph generation, weights, spanning tree, cycle reps, filtering, and drawing
+├-- filters.py          # Filtering-related functions 
+├-- cycles.py           # Cycle analysis and drawing utilities 
+└-- tests/
+    └-- test_basic.py   # Unit tests for main functionalities
 
 ## Notes
 
