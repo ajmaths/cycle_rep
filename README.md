@@ -26,7 +26,7 @@ pip install networkx matplotlib
 - Visualize the graphs.
 
 ```python
-from your_script import generate_bipartite_graph, assign_weights, degree_biased_spanning_tree_max, draw_weighted_bipartite_graph
+from cycle_reps_package.graph_utils import generate_bipartite_graph, assign_weights, weight_biased_spanning_tree, find_cycles_from_non_tree_edges
 
 n = 4
 weights = [2, 1, 3, 4]
@@ -34,13 +34,13 @@ weights = [2, 1, 3, 4]
 G, left_nodes, right_nodes = generate_bipartite_graph(n)
 assign_weights(G, left_nodes, right_nodes, weights)
 
-T = degree_biased_spanning_tree_max(G)
+T = weight_biased_spanning_tree(G)
 draw_weighted_bipartite_graph(T, left_nodes, right_nodes, title="Degree-Biased Spanning Tree")
 ```
 
 ## File Structure
 
-- `Representives_for_H1((G_k)_r,L).ipynb` — Contains all functions for graph generation, weight assignment, spanning tree computation, and visualization.
+- `Cycle_reps.ipynb` — Contains all functions for graph generation, weight assignment, spanning tree computation, and visualization.
 
 ## Notes
 
