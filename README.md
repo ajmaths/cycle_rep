@@ -31,43 +31,27 @@ pip install networkx matplotlib
 
 **Example usage in Python:**
 ```python
-from cycle_reps_package.graph_utils import (
-    generate_bipartite_graph,
-    assign_weights,
-    weight_biased_spanning_tree,
-    find_cycles_from_non_tree_edges,
-    draw_bipartite_graph,
-    draw_weight_biased_spanning_tree,
-    superlevel_subgraph,
-    draw_filtered_subgraph,
-    analyze_and_draw_superlevel_cycles,
-    decompose_manual_cycle_exact,
-)
+from cycle_reps_package.graphgen import generate_bipartite_graph, assign_weights
+from cycle_reps_package.spanningtree import weight_biased_spanning_tree, draw_weight_biased_spanning_tree
+from cycle_reps_package.cycles import find_cycles_from_non_tree_edges, decompose_manual_cycle_exact
+from cycle_reps_package.filtering import draw_filtered_subgraph, analyze_and_draw_superlevel_cycles
 
-n = 4
-weights = [2, 1, 3, 4]
+import cycle_reps_package.graphgen as gg
+print(dir(gg))
 
-# Generate graph and assign weights
-G, left_nodes, right_nodes = generate_bipartite_graph(n)
-assign_weights(G, left_nodes, right_nodes, weights)
+n = 5
+weights = [2, 1, 3, 5, 4] # weights of vertices of the form 0i. (Note: 0i=i0)
 
-# Draw original graph
-draw_bipartite_graph(G, left_nodes, right_nodes)
+G, left_nodes, right_nodes = gg.generate_bipartite_graph(n)
+gg.assign_weights(G, left_nodes, right_nodes, weights)
+gg.draw_bipartite_graph(G, left_nodes, right_nodes)
 
-# Compute weight-biased spanning tree and draw it
 T = weight_biased_spanning_tree(G)
 draw_weight_biased_spanning_tree(T, left_nodes, right_nodes)
 
-# Find fundamental cycles and analyze filtered subgraphs
 cycles = find_cycles_from_non_tree_edges(G, T)
-draw_filtered_subgraph(G, left_nodes, right_nodes, threshold=1.5)
-analyze_and_draw_superlevel_cycles(G, left_nodes, right_nodes, threshold=1.5)
-
-# Decompose manual cycles (example)
-manual_edges = [...]  # List of edges representing a cycle from a filtered subgraph
-indices = decompose_manual_cycle_exact(manual_edges, cycles)
-if indices:
-    print("Manual cycle decomposed into fundamental cycles:", indices)
+draw_filtered_subgraph(G, left_nodes, right_nodes, threshold=0.5)
+analyze_and_draw_superlevel_cycles(G, left_nodes, right_nodes, threshold=0.5)
 
 ```
 
